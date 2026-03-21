@@ -47,7 +47,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
         message: document.getElementById("message").value
     };
 
-    fetch("http://localhost:5000/contact", {
+    fetch("https://yash-backend-3uo1.onrender.com/contact", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
