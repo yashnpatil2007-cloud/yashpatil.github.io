@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>XO Game | Yash</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    background:#020617;
+    color:white;
+    font-family:Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.game{
+    text-align:center;
+    animation: zoomIn .6s ease;
+}
+
+@keyframes zoomIn{
+    from{transform:scale(.6);opacity:0}
+    to{transform:scale(1);opacity:1}
+}
+
+h1{color:#38bdf8}
+
+.board{
+    display:grid;
+    grid-template-columns:repeat(3,90px);
+    gap:12px;
+    margin:20px auto;
+}
+
+.cell{
+    width:90px;
+    height:90px;
+    background:#0f172a;
+    font-size:48px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    border-radius:12px;
+    transition:.25s;
+}
+
+.cell:hover{
+    transform:scale(1.08);
+    background:#1e293b;
+}
+
+.cell.pop{
+    animation: pop .2s ease;
+}
+
+@keyframes pop{
+    0%{transform:scale(.5)}
+    100%{transform:scale(1)}
+}
+
+.cell.win{
+    background:#22c55e;
+    color:black;
+    animation: glow .6s infinite alternate;
+}
+
+@keyframes glow{
+    from{box-shadow:0 0 10px #22c55e}
+    to{box-shadow:0 0 25px #22c55e}
+}
+
+.score{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom:10px;
+}
+
+button,select{
+    margin:6px;
+    padding:8px 14px;
+    border:none;
+    border-radius:8px;
+    background:#38bdf8;
+    font-weight:bold;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="game">
+<h1>Tic Tac Toe</h1>
+
+<select id="mode">
+    <option value="pvp">Player vs Player</option>
+    <option value="ai">Player vs Computer</option>
+</select>
+
+<div class="score">
+    <p>X : <span id="xScore">0</span></p>
+    <p>O : <span id="oScore">0</span></p>
+</div>
+
+<div class="board" id="board"></div>
+<p id="status">Player X Turn</p>
+
+<button onclick="resetGame()">Restart Game</button>
+<button onclick="resetScore()">Reset Score</button>
+</div>
+
+<script>
+const board = document.getElementById("board");
+const statusText = document.getElementById("status");
+const xScoreText = document.getElementById("xScore");
+const oScoreText = document.getElementById("oScore");
+const mode = document.getElementById("mode");
+
+let cells = Array(9).fill("");
+let currentPlayer = "X";
+let gameActive = true;
+let xScore = 0, oScore = 0;
+
+const wins = [
+[0,1,2],[3,4,5],[6,7,8],
+[0,3,6],[1,4,7],[2,5,8],
+[0,4,8],[2,4,6]
+];
+
+function createBoard(){
+    board.innerHTML="";
+    cells.forEach((_,i)=>{
+        const d=document.createElement("div");
+        d.className="cell";
+        d.onclick=()=>play(i);
+        board.appendChild(d);
+    });
+}
+
+function play(i){
+    if(!gameActive || cells[i]) return;
+
+    cells[i]=currentPlayer;
+    const cell=board.children[i];
+    cell.textContent=currentPlayer;
+    cell.classList.add("pop");
+
+    if(checkWin()){
+        statusText.textContent=`${currentPlayer} Wins 🎉`;
+        gameActive=false;
+        highlightWin();
+        if(currentPlayer==="X"){
+            xScore++; xScoreText.textContent=xScore;
+        } else {
+            oScore++; oScoreText.textContent=oScore;
+        }
+        return;
+    }
+
+    if(!cells.includes("")){
+        statusText.textContent="Draw 😐";
+        gameActive=false;
+        return;
+    }
+
+    currentPlayer = currentPlayer==="X"?"O":"X";
+    statusText.textContent=`Player ${currentPlayer} Turn`;
+
+    if(mode.value==="ai" && currentPlayer==="O"){
+        setTimeout(aiMove,500);
+    }
+}
+
+function aiMove(){
+    let empty=cells.map((v,i)=>v==""?i:null).filter(v=>v!==null);
+    play(empty[Math.floor(Math.random()*empty.length)]);
+}
+
+function checkWin(){
+    return wins.some(w=>w.every(i=>cells[i]===currentPlayer));
+}
+
+function highlightWin(){
+    wins.forEach(w=>{
+        if(w.every(i=>cells[i]===currentPlayer)){
+            w.forEach(i=>board.children[i].classList.add("win"));
+        }
+    });
+}
+
+function resetGame(){
+    cells=Array(9).fill("");
+    currentPlayer="X";
+    gameActive=true;
+    statusText.textContent="Player X Turn";
+    createBoard();
+}
+
+function resetScore(){
+    xScore=0; oScore=0;
+    xScoreText.textContent=xScore;
+    oScoreText.textContent=oScore;
+    resetGame();
+}
+
+createBoard();
+</script>
+
+</body>
+</html>

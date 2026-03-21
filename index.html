@@ -1,96 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Yash Patil | MITAOE Pune</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yash Patil | Ultimate Portfolio</title>
 
-    <!-- SEO -->
-    <meta name="description" content="Yash Patil, Computer Engineering student at MIT Academy of Engineering (MITAOE), Pune.">
-    <meta name="keywords" content="Yash Patil MITAOE, Yash Patil Pune, Yash Patil Engineering">
-    <meta name="author" content="Yash Patil">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #020617, #0f172a);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-        .card {
-            background: #020617;
-            padding: 30px;
-            border-radius: 18px;
-            max-width: 520px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 0 25px rgba(56,189,248,0.35);
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        h1 {
-            color: #38bdf8;
-            margin-bottom: 10px;
-        }
-
-        p {
-            margin: 8px 0;
-            font-size: 16px;
-        }
-
-        .links {
-            margin-top: 20px;
-        }
-
-        .links a {
-            display: inline-block;
-            margin: 8px;
-            padding: 10px 18px;
-            border-radius: 10px;
-            background: #38bdf8;
-            color: #020617;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .links a:hover {
-            background: #0ea5e9;
-            transform: scale(1.05);
-        }
-
-        footer {
-            margin-top: 20px;
-            font-size: 13px;
-            opacity: 0.7;
-        }
-    </style>
 </head>
-
 <body>
 
-    <div class="card">
-        <h1>Yash Patil</h1>
+<header class="hero">
 
-        <p><b>College:</b> MIT Academy of Engineering (MITAOE), Pune</p>
-        <p><b>Branch:</b> Information Technology</p>
-        <p><b>Skills:</b> HTML, CSS, Python, Web Development</p>
-        <p><b>Email:</b> yashnpatil2007@email.com</p>
+    <button id="theme-toggle">Toggle</button>
 
-        <div class="links">
-            <a href="https://github.com/yashnpatil2007-cloud" target="_blank">GitHub</a>
-           <a href="https://www.linkedin.com/in/yash-patil-1542b0395" target="_blank">LinkedIn</a>
-
-        </div>
-
-        <footer>
-            © 2026 | Yash Patil
-        </footer>
+    <div class="profile-container">
+        <img src="images/profile.jpeg" alt="Yash Patil" class="profile-pic">
     </div>
 
+    <h1>Yash Patil</h1>
+    <h2 class="typing"></h2>
+    <a href="#contact" class="btn">Connect With Me</a>
+
+</header>
+
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="glass">
+        <p>
+            I am an Information Technology student at MIT Academy of Engineering (Autonomous), Pune.
+            Passionate about coding, technology and building impactful digital products.
+            My mission is to become a highly skilled software engineer by 2029.
+        </p>
+    </div>
+</section>
+
+<section id="education">
+    <h2>Academic Journey</h2>
+    <div class="grid">
+
+        <div class="card">
+            <h3>B.E – IT</h3>
+            <p>MIT AOE (Autonomous)</p>
+            <span class="badge">2025–2029</span>
+        </div>
+
+        <div class="card">
+            <h3>12th – PCM</h3>
+            <p>Maharashtra Board</p>
+            <span class="badge">86%</span>
+        </div>
+
+        <div class="card">
+            <h3>10th – SSC</h3>
+            <p>Maharashtra Board</p>
+            <span class="badge">95%</span>
+        </div>
+
+        <div class="card">
+            <h3>MHT-CET</h3>
+            <p>Engineering Entrance</p>
+            <span class="badge highlight">95.10 %ile</span>
+        </div>
+
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Technical Skills</h2>
+
+    <div class="skill">
+        <p>HTML</p>
+        <div class="progress"><div class="bar html"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>CSS</p>
+        <div class="progress"><div class="bar css"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Python</p>
+        <div class="progress"><div class="bar python"></div></div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Modern responsive portfolio with animations.</p>
+            <a href="#" class="project-btn">View Project</a>
+        </div>
+
+        <div class="card">
+            <h3>XO Game</h3>
+            <p>Tic Tac Toe with score tracking and animations.</p>
+            <a href="xo.html" class="project-btn">View Project</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="achievements">
+    <h2>Achievements & Goals</h2>
+    <div class="glass">
+        <ul>
+            <li>Built multiple web development projects</li>
+            <li>Strong academic consistency</li>
+            <li>Goal: Crack top placement by 2029</li>
+        </ul>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: yashnpatil2007@gmail.com</p>
+<form class="contact-form" id="contactForm">
+
+    <div>
+        <input type="text" id="name" placeholder="Your Name" required>
+    </div>
+
+    <div>
+        <input type="email" id="email" placeholder="Your Email" required>
+    </div>
+
+    <div>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+    </div>
+
+    <div>
+        <button type="submit">Send Message</button>
+    </div>
+
+</form>
+    <div class="social-links">
+        <a href="https://github.com/yashnpatil2007-cloud" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yash-patil-1542b0395" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://instagram.com/yashpatil_75" target="_blank"><i class="fab fa-instagram"></i>
+</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Yash Patil | Built with Passion 💻</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

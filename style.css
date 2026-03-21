@@ -1,0 +1,264 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+html {
+    scroll-behavior: smooth;
+}
+
+
+body{
+font-family:'Poppins', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+background:linear-gradient(-45deg,#1f1c2c,#4c2c65,#862e52,#cf7112);
+background-size:400% 400%;
+animation:gradient 10s ease infinite;
+color:white;
+text-align:center;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.hero{padding:80px 20px;}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 30px;
+background:#00f7ff;
+color:black;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav{
+background:rgba(0,0,0,0.6);
+padding:15px;
+}
+
+nav a{
+margin:15px;
+color:white;
+text-decoration:none;
+}
+
+section{
+    padding:60px 20px;
+    opacity: 1;  /* change yeh kiya */
+    transform: translateY(0);
+    transition: 0.6s;
+}
+
+.grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+padding:20px;
+width:250px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+.glass{
+background:rgba(255,255,255,0.1);
+padding:20px;
+width:70%;
+margin:auto;
+border-radius:15px;
+}
+
+.skill{width:70%;margin:20px auto;}
+
+.progress{background:rgba(255,255,255,0.2);border-radius:20px;}
+
+.bar{height:12px;border-radius:20px;animation:load 2s forwards;}
+
+.html{width:90%;background:#ff6f61;}
+.css{width:85%;background:#2196f3;}
+.python{width:75%;background:#fdd835;}
+
+@keyframes load{from{width:0;}}
+
+.badge{
+display:inline-block;
+margin-top:10px;
+padding:5px 15px;
+background:#00f7ff;
+color:black;
+border-radius:20px;
+font-weight:bold;
+}
+
+.highlight{
+background:#ff4d4d;
+color:white;
+box-shadow:0 0 15px #ff4d4d;
+}
+
+.social-links a{
+margin:15px;
+font-size:30px;
+color:white;
+}
+
+footer{
+padding:20px;
+background:rgba(0,0,0,0.7);
+}
+.profile-container {
+    margin-bottom: 20px;
+}
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #00f7ff, #ff00ff, #00f7ff);
+    animation: rotateBorder 4s linear infinite;
+}
+
+.profile-pic {
+    display: block;
+    border-radius: 12px;
+}
+@keyframes rotateBorder {
+    0% {
+        background: linear-gradient(45deg, #00f7ff, #ff00ff);
+    }
+    50% {
+        background: linear-gradient(225deg, #ff00ff, #00f7ff);
+    }
+    100% {
+        background: linear-gradient(45deg, #00f7ff, #ff00ff);
+    }
+}
+.profile-container {
+    box-shadow: 0 0 25px #00f7ff;
+}
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 12px; /* yaha change kiya */
+    object-fit: cover;
+    border: 5px solid #00f7ff;
+    box-shadow: 0 0 25px #00f7ff;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 60px #00f7ff;
+}
+.social-links a:hover {
+    color: #E1306C;
+    transform: scale(1.2);
+}
+.project-btn {
+    display: inline-block;
+    width: auto;          /* 🔥 IMPORTANT */
+    padding: 10px 20px;
+    background: #00f7ff;
+    color: black;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.project-btn:hover {
+    background: #ff00ff;
+    color: white;
+    transform: scale(1.05);
+}
+.contact-form {
+    width: 320px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.8);
+    font-size: 14px;
+}
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background: #00f7ff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #ff00ff;
+    color: white;
+    transform: scale(1.05);
+}
+
+.project-btn {
+    display: inline-block !important;
+    width: auto !important;
+    padding: 10px 20px;
+    background: #00f7ff;
+    color: black;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.project-btn:hover {
+    background: #ff00ff;
+    color: white;
+    transform: scale(1.05);
+}
+.light-mode {
+    background: white;
+    color: black;
+}
+
+.light-mode .card {
+    background: rgba(0,0,0,0.1);
+}
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: none;
+    background: #00f7ff;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 9999; 
+}
